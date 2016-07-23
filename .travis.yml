@@ -8,11 +8,11 @@ cache:
 before_install:
   - sudo add-apt-repository -y ppa:avsm/ppa
   - sudo apt-get -qq update
-  - sudo apt-get install -y ocaml-nox ocaml-native-compilers opam
+  - sudo apt-get install -y ocaml-nox ocaml-native-compilers opam coq
   - opam init -a
   - eval `opam config env`
 install:
-  - travis_wait opam install -y menhir coq ocamlbuild camlp5
+  - travis_wait opam install -y menhir ocamlbuild camlp5
 script:
   - make -j2
 
