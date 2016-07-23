@@ -8,7 +8,7 @@ before_install:
   - opam init -a
   - eval `opam config env`
 install:
-  - opam install -y menhir coq ocamlbuild camlp5
+  - travis_wait opam install -y menhir coq ocamlbuild camlp5
 script:
   - make -j2
 
