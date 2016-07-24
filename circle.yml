@@ -2,6 +2,8 @@ dependencies:
   cache_directories:
     - "~/.opam"
   override:
+    - wget 'http://www.ocamljava.org/downloads/download.php?version=2.0-alpha3-bin'
+    - tar xf ocamljava-2.0-alpha3-bin.tar.gz
     - sudo add-apt-repository -y ppa:avsm/ppa
     - sudo apt-get -qq update
     - sudo apt-get install -y ocaml-nox ocaml-native-compilers opam
@@ -12,3 +14,4 @@ dependencies:
 test:
   override:
     - eval `opam config env` && make
+    - eval `opam config env` && OCAMLJAVA=~/ocamljava-2.0-alpha3 make java-extraction && cp lib/CALib.jar $CIRCLE_ARTIFACTS
