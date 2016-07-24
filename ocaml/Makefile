@@ -15,7 +15,7 @@
 #
 
 ## Configuratin for the separate ocamljava compiler
-OCAMLJAVA=/Users/js/.opam/ocamljava-2.0-alpha3
+OCAMLJAVA ?= /Users/js/.opam/ocamljava-2.0-alpha3
 
 ###### Shouldn't have to be changed after this
 OCAMLBUILD= ocamlbuild \
